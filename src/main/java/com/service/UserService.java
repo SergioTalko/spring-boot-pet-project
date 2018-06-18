@@ -1,5 +1,6 @@
 package com.service;
 
+import com.entity.Message;
 import com.entity.Role;
 import com.entity.User;
 import com.repository.UserRepo;
@@ -140,8 +141,8 @@ userRepo.save(user);
                     user.getActivationCode()
             );
 
-
             mailSender.send(user.getEmail(), "ActivationCode", message);
         }
     }
+
 }
