@@ -1,6 +1,5 @@
 package com.service;
 
-import com.entity.Message;
 import com.entity.Role;
 import com.entity.User;
 import com.repository.UserRepo;
@@ -13,7 +12,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
-import javax.mail.MessagingException;
 import java.util.*;
 import java.util.stream.Collectors;
 

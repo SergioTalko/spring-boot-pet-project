@@ -71,7 +71,6 @@
     </div>
     </#if>
 
-
     <input type="hidden" name="_csrf" value="${_csrf.token}"/>
 <#if !isRegisterForm><a href="/registration">Add User</a></#if>
     <button class="btn btn-primary" type="submit"><#if isRegisterForm>Create<#else>Sign In</#if></button>
@@ -81,12 +80,15 @@
 
 <#macro logout>
 
-<#if Session.SPRING_SECURITY_CONTEXT??>
+    <#if Session.SPRING_SECURITY_CONTEXT??>
         <form action="/logout" method="post">
             <input type="hidden" name="_csrf" value="${_csrf.token}"/>
             <button class="btn btn-primary" type="submit" value="Sign Out">Sign Out</button>
         </form>
 
-
-</#if>
+    <#--TODO check    -->
+    <#else>
+    <input type="hidden" name="_csrf" value="${_csrf.token}"/>
+    <a class="btn btn-primary" href="/login">Login</a>
+    </#if>
 </#macro>
